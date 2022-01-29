@@ -57,4 +57,4 @@ X_data_final <- cbind(X_data_f2 , subject_data)
 ## 5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and subject
 activity_subject_group <- group_by(X_data_final, Activity,Subject )
 tidy_average_dataset <- summarise_all(activity_subject_group , .funs = mean)
-write.csv(tidy_average_dataset,file = "tidy_average_dataset.csv")
+write.table(tidy_average_dataset,file = "tidy_average_dataset.txt" ,row.names = FALSE)
